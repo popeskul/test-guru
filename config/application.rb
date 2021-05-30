@@ -10,6 +10,8 @@ module TestGuru
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.time_zone = 'Kyiv'
+    config.i18n.default_locale = :uk
 
     # Configuration for the application, engines, and railties goes here.
     #
