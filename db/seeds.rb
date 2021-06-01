@@ -52,3 +52,9 @@ answers = Answer.create([
   { correct: false, question_id: questions[1].id },
   { correct: false, question_id: questions[2].id }
 ])
+
+# sorted in descending order an array of names of all Tests in which the Category is named in a certain way
+Test.find_by_category_title('ruby')
+
+# a list of all Tests that the User passes or has ever passed at this difficulty level
+users.first.find_by_level(1)
