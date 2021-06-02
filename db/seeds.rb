@@ -57,4 +57,4 @@ answers = Answer.create([
 Test.find_by_category_title('ruby')
 
 # a list of all Tests that the User passes or has ever passed at this difficulty level
-users.first.find_by_level(1)
+pp users.first.find_by_level(1)
