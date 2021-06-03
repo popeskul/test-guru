@@ -1,12 +1,11 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :user
+  belongs_to :author, class_name: "User", foreign_key: 'user_id'
   has_many :questions
-  has_many :tests_users
-  has_many :users, through: :tests_users
+  has_and_belongs_to_many :users
 
-  def self.find_by_category_title (title)
-    category
+  def self.find_by_category_title(title)
+    self.joins(:category)
       .where(title: title)
       .order('tests.title DESC')
       .pluck('tests.title')

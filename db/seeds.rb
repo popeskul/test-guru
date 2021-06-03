@@ -31,11 +31,37 @@ categories = Category.create([
 ])
 
 tests = Test.create([
-  { title: 'Синтаксис Ruby 1', level: 1, category_id: categories[0].id },
-  { title: 'Синтаксис SQL', level: 1, category_id: categories[1].id },
-  { title: 'Синтаксис HTML', level: 5, category_id: categories[2].id },
-  { title: 'Синтаксис CSS', level: 5, category_id: categories[3].id },
-  { title: 'Синтаксис JS', level: 3, category_id: categories[4].id }
+  {
+    title: 'Синтаксис Ruby 1',
+    level: 1,
+    category_id: categories[0].id,
+    author: users[0]
+  },
+  {
+    title: 'Синтаксис SQL',
+    level: 1,
+    category_id: categories[1].id,
+    author: users[1]
+  },
+  {
+    title: 'Синтаксис HTML',
+    level: 5,
+    category_id: categories[2].id,
+    author: users[2]
+  },
+  {
+    title: 'Синтаксис CSS',
+    level: 5,
+    category_id: categories[3].id,
+    author: users[3]
+  },
+  {
+    title: 'Синтаксис JS',
+    level: 3,
+    category_id: categories[4].id,
+    author: users[1],
+    users: [users[0], users[2]]
+  }
 ])
 
 questions = Question.create([
@@ -43,6 +69,8 @@ questions = Question.create([
   { body: 'What command is used to create the table?', test_id: tests[1].id },
   { body: 'Which tag is used to describe the first level header?', test_id: tests[2].id }
 ])
+
+# pp tests.map(&:errors)
 
 answers = Answer.create([
   { correct: true, question_id: questions[0].id },
@@ -54,7 +82,7 @@ answers = Answer.create([
 ])
 
 # sorted in descending order an array of names of all Tests in which the Category is named in a certain way
-Test.find_by_category_title('ruby')
+pp Test.find_by_category_title('ruby')
 
 # a list of all Tests that the User passes or has ever passed at this difficulty level
 pp users.first.find_by_level(1)
