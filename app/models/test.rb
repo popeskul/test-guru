@@ -5,10 +5,10 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users
 
-  def self.find_by_category_title (category_title)
-    Test.joins('JOIN categories ON categories.id = tests.category_id')
-        .where('categories.title = ?', category_title)
-        .order('tests.title DESC')
-        .pluck('tests.title')
+  def self.find_by_category_title (title)
+    category
+      .where(title: title)
+      .order('tests.title DESC')
+      .pluck('tests.title')
   end
 end
