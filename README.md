@@ -13,3 +13,6 @@ Test Guru project has following entities:
 * Result
 
 * Please use Semantic Versioning https://semver.org
+
+
+![Alt text](/storage/TestGuru.jpg "TestGuru")
