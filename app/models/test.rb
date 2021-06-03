@@ -5,9 +5,10 @@ class Test < ApplicationRecord
   has_and_belongs_to_many :users
 
   def self.find_by_category_title(title)
-    self.joins(:category)
+    Category
+      .joins(:tests)
       .where(title: title)
-      .order('tests.title DESC')
-      .pluck('tests.title')
+      .order(created_at: :desc)
+      .pluck(:title)
   end
 end
