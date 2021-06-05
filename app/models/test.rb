@@ -6,7 +6,7 @@ class Test < ApplicationRecord
 
   def self.find_by_category_title(title)
     Test
-      .joins('JOIN categories ON tests.category_id = categories.id')
+      .joins(:category)
       .where('categories.title = :title', title: title)
       .order(id: :desc)
   end
