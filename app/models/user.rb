@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-    def find_by_level(level)
-      Test.joins("JOIN tests_users ON tests_users.test_id = tests.id")
-          .where(tests_users: { user_id: id })
-          .where(level: level)
-    end
+  has_and_belongs_to_many :tests
+  has_many :created_tests, class_name: 'Test'
+
+  def find_by_level(level)
+    tests.where(level: level)
+  end
 end
