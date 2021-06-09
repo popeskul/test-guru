@@ -4,6 +4,13 @@ class Test < ApplicationRecord
   has_many :questions
   has_and_belongs_to_many :users
 
+  scope :by_level, -> (level) { where(level: level) }
+  scope :easy, -> { by_level(1) }
+  scope :intermediate, -> { by_level(2..4) }
+  scope :hard, -> { by_level(5..Float::INFINITY) }
+
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
+
   def self.find_by_category_title(title)
     Test
       .joins(:category)
