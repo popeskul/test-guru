@@ -11,9 +11,8 @@ class Test < ApplicationRecord
 
   scope :by_category_title, -> (title) { joins(:category).where('categories.title = :title', title: title) }
 
-  validates :title, presence: true
-  validates :title, uniqueness: { scope: :level }
-  validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than: 0 }, uniqueness: { scope: :title }
 
   def self.by_title(title)
     Test
