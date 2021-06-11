@@ -17,7 +17,9 @@ class TestsController < ApplicationController
   def create
     test = @tests.new(test_params)
 
-    render plain: test.inspect
+    if test.save
+      render plain: test.inspect
+    end
   end
 
   def destroy; end
