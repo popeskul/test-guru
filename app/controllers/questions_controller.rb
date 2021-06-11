@@ -1,27 +1,38 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: [:index, :create]
-  before_action :find_question, only: [:show, :destroy]
+  before_action :find_test, only: [:index, :create, :new]
+  before_action :find_question, only: [:destroy, :show, :edit, :update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    questions = @test.questions.map { |question| "<p>#{question.body}</p>" }
-    render html: questions.join.html_safe
+    @questions = @test.questions
   end
 
   def show
-    render html: @question.body.html_safe
+    @question
   end
 
-  def new; end
+  def new
+    @question = @test.questions.new
+  end
 
   def create
-    question = @test.questions.new(question_params)
+    @question = @test.questions.new(question_params)
 
-    if question.save
+    if @question.save
       redirect_to action: :index
     else
-      render 'new'
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
     end
   end
 
