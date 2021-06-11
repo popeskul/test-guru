@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_tests, only: [:index, :create]
-  before_action :find_questions, only: [:show, :destroy]
+  before_action :find_test, only: [:show, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -36,8 +36,8 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def find_questions
-    @questions = Question.all
+  def find_test
+    @test = Test.find_by(id: params[:id]);
   end
 
   def index_page
@@ -52,7 +52,7 @@ class TestsController < ApplicationController
 
     html_string = "<h1>Question №#{params_id}</h1>"
 
-    @questions.each do |questions|
+    @test.questions.each do |questions|
       if questions.id == params_id.to_i
         html_string << "<p>'#{questions.body}' with id ##{questions.id}</p>"
       end
