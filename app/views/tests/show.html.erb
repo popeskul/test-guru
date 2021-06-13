@@ -1,0 +1,36 @@
+<h1>Question <%= @test.id %></h1>
+
+<table>
+  <thead>
+  <tr>
+    <td>
+      Body
+    </td>
+    <td colspan="2">
+      Actions
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+  <% @test.questions.each do |question| %>
+    <tr>
+      <td>
+        <%= link_to question.body, question_path(question) %>
+      </td>
+      <td>
+        <%= link_to 'edit', edit_question_path(question) %>
+      </td>
+      <td>
+        <%= link_to 'delete',
+                    question_path(question),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'Back', tests_path %>
