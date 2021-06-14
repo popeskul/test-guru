@@ -15,6 +15,9 @@
     <%= link_to 'edit', edit_test_path(test) %>
   </td>
   <td>
+    <%= button_to 'Start', start_test_path(test) %>
+  </td>
+  <td>
     <%= link_to 'delete',
                 test_path(test),
                 method: :delete,
