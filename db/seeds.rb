@@ -1,19 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 users = User.create([
   { name: 'Tyler', email: 'test1@test.com', password: '123123' },
   { name: 'Adam', email: 'test2@test.com', password: '123123' },
@@ -73,16 +57,10 @@ questions = Question.create([
 # pp tests.map(&:errors)
 
 answers = Answer.create([
-  { correct: true, question_id: questions[0].id },
-  { correct: false, question_id: questions[1].id },
-  { correct: false, question_id: questions[2].id },
-  { correct: true, question_id: questions[0].id },
-  { correct: false, question_id: questions[1].id },
-  { correct: false, question_id: questions[2].id }
+  { correct: true, title: 'text 1', question_id: questions[0].id },
+  { correct: false, title: 'text 2', question_id: questions[1].id },
+  { correct: false, title: 'text 3', question_id: questions[2].id },
+  { correct: true, title: 'text 4', question_id: questions[0].id },
+  { correct: false, title: 'text 5', question_id: questions[1].id },
+  { correct: false, title: 'text 6', question_id: questions[2].id }
 ])
-
-# sorted in descending order an array of names of all Tests in which the Category is named in a certain way
-pp Test.find_by_category_title('ruby')
-
-# a list of all Tests that the User passes or has ever passed at this difficulty level
-pp users.first.find_by_level(1)
