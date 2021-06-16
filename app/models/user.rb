@@ -1,11 +1,15 @@
+require 'digest/sha1'
+
 class User < ApplicationRecord
+  VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test'
 
-  validates :name, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL }
+
+  has_secure_password
 
   def find_by_level(level)
     tests.by_level(level)
