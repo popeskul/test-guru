@@ -5,7 +5,7 @@
 
   <div class="header__side">
     <% if user_signed_in? %>
-      <div>Welcome, <b><%= current_user.email %></b>!</div>
+      <div>Welcome, <b><%= welcome_message(current_user) %></b>!</div>
 
       <ul class="header__nav">
         <li><%= link_to 'Test list', tests_path, class: 'btn' %></li>

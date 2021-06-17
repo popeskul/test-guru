@@ -1,25 +1,23 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :authenticate_user!
   before_action :find_tests, only: %i[index create]
   before_action :find_test, only: %i[show destroy edit update start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
-  def index
-    @tests = Test.all
-  end
+  def index; end
 
   def show; end
 
   def new
-    @test = Test.new
+    @test = current_user.tests.new
   end
 
   def create
     @test = Test.new(test_params)
+    @test.authors.push(current_user)
 
     if @test.save
-      redirect_to admin_test_path(@test)
+      redirect_to [:admin, @test], notice: 'Test created'
     else
       render :new
     end
@@ -29,15 +27,18 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to [:admin, @test], notice: 'Test edited!'
     else
       render :edit
     end
   end
 
   def destroy
-    @test.destroy
-    redirect_to tests_path
+    if @test.destroy
+      redirect_to :admin_tests, notice: 'Test deleted!'
+    else
+      render plain: 'Not deleted'
+    end
   end
 
   def search

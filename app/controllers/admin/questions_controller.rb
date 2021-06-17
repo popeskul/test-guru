@@ -1,16 +1,10 @@
-class QuestionsController < ApplicationController
-  before_action :find_test, only: [:index, :create, :new]
+class Admin::QuestionsController < Admin::BaseController
+  before_action :find_test, only: [:create, :new]
   before_action :find_question, only: [:destroy, :show, :edit, :update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    @questions = @test.questions
-  end
-
-  def show
-    @question
-  end
+  def show; end
 
   def new
     @question = @test.questions.new
@@ -20,7 +14,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to @question
+      redirect_to [:admin, @question]
     else
       render :new
     end
