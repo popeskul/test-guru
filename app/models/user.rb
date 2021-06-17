@@ -1,13 +1,11 @@
 require 'digest/sha1'
 
 class User < ApplicationRecord
-  VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test'
 
-  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL }
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_secure_password
 
