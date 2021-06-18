@@ -1,50 +1,32 @@
 users = User.create([
-  { name: 'Tyler', email: 'test1@test.com', password: '123123' },
-  { name: 'Adam', email: 'test2@test.com', password: '123123' },
-  { name: 'Elizabeth', email: 'test3@test.com', password: '123123' },
-  { name: 'Sandy', email: 'test4@test.com', password: '123123' }
+  { first_name: 'Admin', last_name: 'Durden', email: 'admin@mail.com', password: '123123', type: 'Admin' },
+  { first_name: 'User', last_name: 'Tick', email: 'user@mail.com', password: '123123' }
 ])
 
 categories = Category.create([
   { title: 'ruby'   },
   { title: 'sql'    },
-  { title: 'html'   },
-  { title: 'css'    },
   { title: 'js'     },
-  { title: 'js some'}
 ])
 
 tests = Test.create([
   {
-    title: 'Синтаксис Ruby 1',
+    title: 'Test Ruby',
     level: 1,
     category_id: categories[0].id,
-    author: users[0]
+    user_id: users[0].id
   },
   {
-    title: 'Синтаксис SQL',
+    title: 'Test SQL',
     level: 1,
     category_id: categories[1].id,
-    author: users[1]
+    user_id: users[1].id
   },
   {
-    title: 'Синтаксис HTML',
-    level: 5,
+    title: 'Test JS',
+    level: 1,
     category_id: categories[2].id,
-    author: users[2]
-  },
-  {
-    title: 'Синтаксис CSS',
-    level: 5,
-    category_id: categories[3].id,
-    author: users[3]
-  },
-  {
-    title: 'Синтаксис JS',
-    level: 3,
-    category_id: categories[4].id,
-    author: users[1],
-    users: [users[0], users[2]]
+    user_id: users[0].id
   }
 ])
 
