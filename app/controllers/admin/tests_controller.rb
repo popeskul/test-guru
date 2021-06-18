@@ -13,8 +13,8 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = Test.new(test_params)
-    @test.authors.push(current_user)
+    @test = current_user.tests.new(test_params)
+    @test.author = current_user
 
     if @test.save
       redirect_to [:admin, @test], notice: 'Test created'
@@ -34,11 +34,8 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    if @test.destroy
-      redirect_to :admin_tests, notice: 'Test deleted!'
-    else
-      render plain: 'Not deleted'
-    end
+    @test.destroy
+    redirect_to admin_tests_path
   end
 
   def search
@@ -63,7 +60,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :user_id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
 
   def rescue_with_test_not_found
