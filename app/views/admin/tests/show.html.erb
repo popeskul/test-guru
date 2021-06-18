@@ -18,7 +18,7 @@
         <%= link_to question.body, admin_question_path(question) %>
       </td>
       <td>
-        <%= link_to 'edit', edit_question_path(question) %>
+        <%= link_to 'edit', edit_admin_question_path(question) %>
       </td>
       <td>
         <%= link_to 'delete',
@@ -33,7 +33,7 @@
 
 <br />
 
-<%= link_to 'Add question', new_test_question_path(@test), :class => "btn"  %>
+<%= link_to 'Add question', new_admin_test_question_path(@test), :class => "btn"  %>
 
 <br />
 
