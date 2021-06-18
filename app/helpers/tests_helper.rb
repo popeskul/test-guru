@@ -4,8 +4,4 @@ module TestsHelper
   def test_level(test)
     LEVELS[test.level] || :hero
   end
-
-  def test_authors(authors)
-    authors.map { |author| tag.p "#{author.full_name}" }.join.html_safe
-  end
 end
