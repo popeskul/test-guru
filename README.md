@@ -2,4 +2,4 @@
 
 Test Guru project has following entities:
 
-![Alt text](/storage/ER.jpg "TestGuru ER")
+![Alt text](/entity-relationship.png "TestGuru ER")
