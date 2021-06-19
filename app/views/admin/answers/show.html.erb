@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p><strong>Answers:</strong> <%= @answer.title %></p>
+<p><strong><%= t('.answer') %></strong> <%= @answer.title %></p>
 
-<p><strong>Correct:</strong> <%= @answer.correct %> </p>
+<p><strong><%= t('.correct') %></strong> <%= @answer.correct %> </p>
 
-<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path %>
+<%= link_to t('helpers.submit.answer.edit'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('helpers.page.back'), admin_question_path(@answer.question) %>

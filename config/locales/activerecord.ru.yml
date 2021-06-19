@@ -1,0 +1,31 @@
+ru:
+  activerecord:
+    welcome: "Добро пожаловать, гуру"
+
+    models:
+      test: "Тест"
+
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        author: "Автор"
+        category: "Категория"
+
+      question:
+        test: "Тест"
+        body: "Описание"
+
+      category:
+        title: "Название"
+
+      answer:
+        correct: "Корректность"
+        question: "Вопрос"
+        title: "Название"
+
+    errors:
+      messages:
+        required: "обязательное поле"
+        blank: "не может быть пустым"
+        greater_than: "число должно быть больше 0"

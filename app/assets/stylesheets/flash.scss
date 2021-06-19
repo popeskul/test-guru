@@ -1,13 +1,13 @@
-.flash {
-  border: 2px solid black;
+.alert {
+  border: 2px solid red;
   padding: 10px;
   border-radius: 5px;
 
-  &.alert-danger {
-    border-color: red;
+  &-notice {
+    border-color: #3c85e0;
   }
 
-  &.alert-success {
+  &-success {
     border-color: green;
   }
 }
