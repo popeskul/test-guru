@@ -1,6 +1,6 @@
 class Admin::TestsController < Admin::BaseController
   before_action :find_tests, only: %i[index create]
-  before_action :find_test, only: %i[show destroy edit update start]
+  before_action :find_test, only: %i[show destroy edit update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -42,11 +42,6 @@ class Admin::TestsController < Admin::BaseController
     result = ["Class #{params.class}", "Parameters #{params.inspect}"]
 
     render plain: result.join("\n")
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
   end
 
   private
