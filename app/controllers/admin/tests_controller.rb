@@ -13,8 +13,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = current_user.tests.new(test_params)
-    @test.author = current_user
+    @test = current_user.created_tests.new(test_params)
 
     if @test.save
       redirect_to [:admin, @test], notice: 'Test created'
