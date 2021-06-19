@@ -1,4 +1,5 @@
 .header {
+  $block: &;
   display: flex;
   justify-content: space-between;
 
@@ -24,6 +25,32 @@
       &:last-child {
         margin-right: 0;
       }
+    }
+  }
+
+  &--admin {
+    background-color: #4293e6;
+    padding: 0px 25px;
+
+    #{$block} {
+      &__logo {
+        font-size: 30px;
+        margin: 25px 0px;
+        text-decoration: none;
+        line-height: normal;
+      }
+    }
+
+    a {
+      color: white;
+
+      &:hover, &:focus, &:visited {
+        color: white;
+      }
+    }
+
+    p {
+      color: white;
     }
   }
 }

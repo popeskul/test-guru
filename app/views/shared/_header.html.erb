@@ -4,18 +4,17 @@
   </div>
 
   <div class="header__side">
-    <% if logged_in? %>
-      <div>Welcome, <b><%= current_user.email %></b>!</div>
+    <% if user_signed_in? %>
+      <div>Welcome, <b><%= welcome_message(current_user) %></b>!</div>
 
       <ul class="header__nav">
         <li><%= link_to 'Test list', tests_path, class: 'btn' %></li>
-        <li><%= link_to 'Create test', new_test_path, class: 'btn' %></li>
-        <li><%= link_to 'Exit', logout_path, method: :delete, class: :btn %></li>
+        <li><%= link_to 'Exit', destroy_user_session_path, method: :delete, class: :btn %></li>
       </ul>
     <% else %>
       <ul class="header__nav">
-        <li><%= link_to 'Sign up', signup_path, class: :btn %></li>
-        <li><%= link_to 'Sign in', login_path, class: :btn %></li>
+        <li><%= link_to 'Sign up', new_user_registration_path, class: :btn %></li>
+        <li><%= link_to 'Sign in', new_user_session_path, class: :btn %></li>
       </ul>
     <% end %>
   </div>
