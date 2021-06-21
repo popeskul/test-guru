@@ -1,0 +1,33 @@
+en:
+  activerecord:
+    welcome: "Welcome, guru"
+    
+    models:
+      test: "Test"
+      answer:
+        limit: "Exceeded answers limit"
+
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        author: "Author"
+        category: "Category"
+
+      question:
+        test: "Test"
+        body: "Body"
+
+      category:
+        title: "Title"
+
+      answer:
+        correct: "Correct"
+        question: "Question"
+        title: "Title"
+
+    errors:
+      messages:
+        required: "Required field"
+        blank: "Can't be empty"
+        greater_than: "The number must be greater than 0"

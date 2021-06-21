@@ -8,6 +8,7 @@ module ApplicationHelper
   end
 
   def welcome_message(user)
-    "Welcome, guru #{user.first_name} #{user.last_name}!".html_safe
+    welcome = t('activerecord.welcome')
+    "#{welcome} #{user.full_name}!".html_safe
   end
 end
