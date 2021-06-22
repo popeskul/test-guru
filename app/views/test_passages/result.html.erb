@@ -3,7 +3,7 @@
 <h3>
   <%= t('.score') %>:
 
-  <span class="<%= @test_passage.passed? ? 'passed' : 'failed' %>">
+  <span class="<%= @test_passage.passed? ? 'text-success' : 'text-danger' %>">
     <%= number_to_percentage(@test_passage.result, precision: 2) %>
   </span>
 </h3>
