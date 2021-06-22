@@ -1,13 +1,23 @@
-<h1><%= t('.header') %> "<%= @question.test.title %>"</h1>
+<h3><%= t('.header') %> "<%= @question.test.title %>"</h3>
 
 <p><%= @question.body %></p>
 
 <h2><%= t('.answers') %></h2>
 
-<%= link_to t('helpers.submit.answer.new'), new_admin_question_answer_path(@question) %>
+<%= link_to t('helpers.submit.answer.new'), new_admin_question_answer_path(@question), class: 'btn btn-primary' %>
 
-<ol>
+<br /><br />
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th><%= t('helpers.label.answer.view') %></th>
+    <th colspan="2"><%= t('helpers.label.answer.actions') %></th>
+  </tr>
+  </thead>
+  <tbody>
   <%= render @question.answers %>
-</ol>
+  </tbody>
+</table>
 
 <%= link_to t('helpers.page.back'), admin_tests_path %> | <%= link_to t('helpers.submit.question.edit'), edit_admin_question_path(@question) %>

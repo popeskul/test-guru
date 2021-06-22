@@ -47,6 +47,10 @@ en:
       answer:
         body: "Body"
         correct: "Correct"
+        view: "View"
+        edit: "Edit"
+        actions: "Actions"
+        delete: "Delete"
     page:
       back: 'Back'
       main: 'To Home Page'

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 <head>
   <title>Admin | TestGuru</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,10 +10,17 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
-<%= render 'shared/admin_header' %>
-<%= render 'shared/flash_errors' %>
-<%= yield %>
+<body class="d-flex flex-column h-100">
+<%= render 'shared/header' %>
+
+<div class="page-content">
+  <div class="container">
+    <%= render 'shared/flash_errors' %>
+
+    <%= yield %>
+  </div>
+</div>
+
 <%= render 'shared/footer' %>
 </body>
 </html>

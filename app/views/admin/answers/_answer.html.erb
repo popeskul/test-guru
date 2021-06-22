@@ -1,6 +1,13 @@
-<li>
-  <%= answer.title %>
-  <%= link_to t('helpers.submit.answer.view'), admin_answer_path(answer) %> |
-  <%= link_to t('helpers.submit.answer.edit'), edit_admin_answer_path(answer) %> |
-  <%= link_to t('helpers.submit.answer.delete'), admin_answer_path(answer), method: :delete, data: { confirm: t('helpers.delete') } %>
-</li>
+<tr>
+  <td>
+    <%= link_to answer.title, admin_answer_path(answer) %>
+  </td>
+  <td>
+    <%= link_to t('helpers.submit.answer.edit'), edit_admin_answer_path(answer), class: 'link-primary' %> |
+    <%= link_to t('helpers.submit.answer.delete'),
+                admin_answer_path(answer),
+                method: :delete,
+                data: { confirm: t('helpers.delete') },
+                class: 'link-primary' %>
+  </td>
+</tr>
