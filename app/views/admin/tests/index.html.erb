@@ -1,6 +1,6 @@
-<h1><%= t('.header') %></h1>
+<h3><%= t('.header') %></h3>
 
-<table>
+<table class="table table-bordered">
   <thead>
   <tr>
     <th><%= t('helpers.label.test.title') %></th>
@@ -16,4 +16,5 @@
 
 <br />
 
-<%= link_to t('helpers.submit.test.create'), new_admin_test_path %>
+<%= link_to t('helpers.submit.test.create'), new_admin_test_path, class: 'btn btn-primary' %>
+

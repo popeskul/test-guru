@@ -1,7 +1,7 @@
-<h1><%= t('.title') %></h1>
+<h3><%= t('.title') %></h3>
 
 <p><%= @question.body %></p>
 
 <%= render 'form' %>
 
-<%= link_to t('helpers.page.back'), admin_question_path(@question) %>
+<%= link_to t('helpers.page.back'), admin_question_path(@question), class: 'link-primary' %>

@@ -10,4 +10,4 @@
 
 <h4><%= t('.answered_correctly', correct_question: @test_passage.correct_question, questions_count: @test_passage.questions_count )%></h4>
 
-<%= link_to t('helpers.page.main'), tests_path, :class => "btn"  %>
+<%= link_to t('helpers.page.main'), tests_path, class: "btn btn-primary"  %>

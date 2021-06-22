@@ -1,7 +1,7 @@
-<h1><%= t('.header') %></h1>
+<h3><%= t('.header') %></h3>
 
 <p><%= @answer.question.body %></p>
 
 <%= render 'form' %>
 
-<%= link_to t('helpers.page.back'), admin_question_path(@answer.question) %>
+<%= link_to t('helpers.page.back'), admin_question_path(@answer.question), class: 'link-primary' %>

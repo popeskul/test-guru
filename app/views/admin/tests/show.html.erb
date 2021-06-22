@@ -1,6 +1,6 @@
-<h1><%= @test.title %></h1>
+<h3><%= @test.title %></h3>
 
-<table>
+<table class="table table-bordered">
   <thead>
   <tr>
     <td>
@@ -15,15 +15,16 @@
   <% @test.questions.each do |question| %>
     <tr>
       <td>
-        <%= link_to question.body, admin_question_path(question) %>
+        <%= link_to question.body, admin_question_path(question), class: 'link-primary' %>
       </td>
       <td>
-        <%= link_to t('helpers.submit.test.edit'), edit_admin_question_path(question) %>
+        <%= link_to t('helpers.submit.test.edit'), edit_admin_question_path(question), class: 'link-primary' %>
       </td>
       <td>
         <%= link_to t('helpers.submit.test.delete'),
                     admin_question_path(question),
                     method: :delete,
+                    class: 'link-danger',
                     data: { confirm: t('helpers.delete') } %>
       </td>
     </tr>
@@ -33,7 +34,7 @@
 
 <br />
 
-<%= link_to t('helpers.submit.question.add'), new_admin_test_question_path(@test), :class => "btn"  %>
+<%= link_to t('helpers.submit.question.add'), new_admin_test_question_path(@test), class: 'btn btn-primary '  %>
 
 <br />
 
