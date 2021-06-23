@@ -23,9 +23,9 @@ class GistQuestionService
 
   def gist_params
     {
-      description: t('services.gist_question_service.description', title: @test.title),
+      description: I18n.t('.services.gist_question_service.description', title: @test.title),
       files: {
-        t('services.gist_question_service.filename') => {
+        I18n.t('.services.gist_question_service.filename') => {
           content: gist_content
         }
       }
