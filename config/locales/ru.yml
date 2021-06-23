@@ -152,9 +152,15 @@ ru:
         error: "Вопрос не был удаён"
     gists:
       index:
+        header: "Все Gists"
         user: "Пользователь"
+        email: "Email"
         question: "Вопрос"
         gist: "Gist"
+        url: "Ссылка"
+        not_found: "Gists не найдено"
+      show:
+        url: "Ссылка"
 
   tests_mailer:
     completed_test:

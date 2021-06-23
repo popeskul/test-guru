@@ -145,9 +145,15 @@ en:
         success: "Question was deleted."
     gists:
       index:
+        header: "All Gists"
         user: "User"
+        email: "Email"
         question: "Question"
         gist: "Gist"
+        url: "Url"
+        not_found: "Gists not found"
+      show:
+        url: "Url"
 
   tests_mailer:
     completed_test:
