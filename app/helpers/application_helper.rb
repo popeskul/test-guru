@@ -11,4 +11,12 @@ module ApplicationHelper
     welcome = t('activerecord.welcome')
     "#{welcome} #{user.full_name}!".html_safe
   end
+
+  def select_language
+    if I18n.locale == I18n.default_locale
+      link_to "En", { lang: 'en' }, class: current_user&.admin? ? 'nav-link text-white' : 'nav-link'
+    else
+      link_to "Ру", { lang: 'ru' }, class: current_user&.admin? ? 'nav-link text-white' : 'nav-link'
+    end
+  end
 end
