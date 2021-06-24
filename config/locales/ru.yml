@@ -56,6 +56,8 @@ ru:
     page:
       back: 'Назад'
       main: 'На главную страницу'
+    select:
+      gist: "Создать Gist"
     delete: "Подтвердить удаление?"
 
   shared:
@@ -90,6 +92,10 @@ ru:
     show:
       header: "Прохождение теста"
       next: "Дальше"
+      gist: "Создать Gist"
+    gist:
+      success: "Gist успешно сохранен! <b><a href='%{url}' target='_blank'>ПЕРЕЙТИ</a></b>"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     answers:
@@ -144,6 +150,17 @@ ru:
       destroy:
         success: "Вопрос удалён"
         error: "Вопрос не был удаён"
+    gists:
+      index:
+        header: "Все Gists"
+        user: "Пользователь"
+        email: "Email"
+        question: "Вопрос"
+        gist: "Gist"
+        url: "Ссылка"
+        not_found: "Gists не найдено"
+      show:
+        url: "Ссылка"
 
   tests_mailer:
     completed_test:

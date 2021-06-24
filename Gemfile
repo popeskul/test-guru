@@ -26,8 +26,14 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # AUTH
-
 gem 'devise', '~> 4.0'
+
+# NETWORKING
+gem 'faraday'
+gem 'octokit', '~> 4.0'
+
+# ENV
+gem 'dotenv-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

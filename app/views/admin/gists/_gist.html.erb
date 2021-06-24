@@ -1,0 +1,7 @@
+<tr>
+  <td><%= gist.id %></td>
+  <td><%= link_to truncate(gist.question.body, length: 25, separator: '.'), admin_gist_path(gist) %></td>
+  <td><%= gist.user.email %></td>
+  <td><%= gist.question.body %></td>
+  <td><%= link_to gist.gist_url.gsub('https://gist.github.com/', ""), gist.gist_url %></td>
+</tr>
