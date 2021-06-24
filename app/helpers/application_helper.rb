@@ -13,10 +13,14 @@ module ApplicationHelper
   end
 
   def select_language
-    if I18n.locale == I18n.default_locale
-      link_to "En", { lang: 'en' }, class: current_user&.admin? ? 'nav-link text-white' : 'nav-link'
-    else
-      link_to "Ру", { lang: 'ru' }, class: current_user&.admin? ? 'nav-link text-white' : 'nav-link'
-    end
+    is_default_local = I18n.locale == I18n.default_locale
+
+    link_options = {
+      title: is_default_local ? 'En' : 'Ру',
+      lang: is_default_local ? 'en' : 'ру',
+      class: current_user&.admin? ? 'nav-link text-white' : 'nav-link'
+    }
+
+    link_to link_options[:title], { lang: link_options[:lang] }, class: link_options[:class]
   end
 end
