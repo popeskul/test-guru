@@ -6,19 +6,20 @@ document.addEventListener('turbolinks:load', () => {
 
 function sortRowsByTitle() {
     let table = document.querySelector('table tbody')
-
     const rows = table.querySelectorAll('tr')
+    let arrowUp = document.querySelector('.octicon-arrow-up')
+    let arrowDown = document.querySelector('.octicon-arrow-down')
 
     let sortedRows = Object.values(rows)
 
-    if (this.querySelector('.octicon-arrow-up').classList.contains('hide')) {
+    if (arrowUp.classList.contains('hide')) {
         sortedRows.sort(compareRowsAsc)
-        this.querySelector('.octicon-arrow-up').classList.remove('hide')
-        this.querySelector('.octicon-arrow-down').classList.add('hide')
+        arrowUp.classList.remove('hide')
+        arrowDown.classList.add('hide')
     } else {
         sortedRows.sort(compareRowsDesc)
-        this.querySelector('.octicon-arrow-down').classList.remove('hide')
-        this.querySelector('.octicon-arrow-up').classList.add('hide')
+        arrowDown.classList.remove('hide')
+        arrowUp.classList.add('hide')
     }
 
     let sortedTable = document.createElement('tbody')
