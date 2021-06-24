@@ -29,6 +29,8 @@
   <div class="mb-3">
     <%= f.label :password_confirmation, t('.password_confirmation'), class: 'form-label' %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+
+    <span class="mismatch-notification hide">Password mismatch</span>
   </div>
 
   <div class="mb-3">
@@ -41,3 +43,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<%= javascript_pack_tag 'utilities/compare_password.js' %>
