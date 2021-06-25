@@ -1,5 +1,7 @@
 <h3><%= t('.header') %></h3>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table table-bordered">
   <thead>
   <tr>
@@ -23,3 +25,4 @@
 <%= link_to t('helpers.submit.test.create'), new_admin_test_path, class: 'btn btn-primary' %>
 
 <%= javascript_pack_tag 'utilities/sorting.js' %>
+<%= javascript_pack_tag 'utilities/form-inline.js' %>

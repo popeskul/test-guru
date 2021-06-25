@@ -1,5 +1,13 @@
 <h3><%= t('.header') %> <%= @test_passage.test.title %></h3>
 
+<div class="progress test-progress">
+  <%= content_tag :div, '',
+                  class: 'progress-bar bg-success',
+                  id: 'test-progress',
+                  data: { question_number: @test_passage.current_question_index,
+                          questions_count: @test_passage.questions_count } %>
+</div>
+
 <p>
   <%= @test_passage.current_question.body %>
 </p>
@@ -22,3 +30,5 @@
     <p><%= form.submit t('.next'), class: 'btn btn-success' %></p>
   </div>
 <% end %>
+
+<%= javascript_pack_tag 'utilities/passage-progress.js' %>
