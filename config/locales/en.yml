@@ -128,6 +128,8 @@ en:
       update:
         success: "Test edited!"
         error: "Question wasn't updated"
+      form_inline:
+        submit: 'OK'
     questions:
       new:
         header: "New question"

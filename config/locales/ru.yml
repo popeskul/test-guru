@@ -134,6 +134,8 @@ ru:
         error: "Не удалось обновить тест"
       destroy:
         error: "Тест не был удалён"
+      form_inline:
+        submit: "OK"
     questions:
       create:
         success: "Тест успешно создан."
