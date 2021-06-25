@@ -3,7 +3,11 @@
 <table class="table table-bordered">
   <thead>
   <tr>
-    <th><%= t('helpers.label.test.title') %></th>
+    <th class="sort-by-title pointer">
+      <%= t('helpers.label.test.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
     <th><%= t('helpers.label.test.level') %></th>
     <th><%= t('helpers.label.test.questions') %></th>
     <th><%= t('helpers.label.test.action') %></th>
@@ -13,3 +17,5 @@
   <%= render @tests %>
   </tbody>
 </table>
+
+<%= javascript_pack_tag 'utilities/sorting.js' %>
