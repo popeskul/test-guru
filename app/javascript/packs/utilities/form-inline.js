@@ -1,7 +1,5 @@
 document.addEventListener('turbolinks:load', () => {
-    let elements = document.querySelectorAll('.form-inline-link')
-
-    elements.forEach(i => i.addEventListener('click', formInlineLinkHandler))
+    $('.form-inline-link').on('click', formInlineLinkHandler);
 
     let errors = document.querySelector('.resource-errors')
     const editInline = document.querySelector('.edit-inline')
@@ -20,19 +18,14 @@ document.addEventListener('turbolinks:load', () => {
     function formLinkHandler(id) {
         const dataSelector = `[data-test-id="${id}"]`
         let link = document.querySelector(`.form-inline-link${dataSelector}`)
-        let form = document.querySelector(`.form-inline${dataSelector}`)
-        let title = document.querySelector(`.test-title${dataSelector}`)
+        let $form = $(`.form-inline${dataSelector}`)
+        let $title = $(`.test-title${dataSelector}`)
 
-        if (link) {
-            if (form.classList.contains('d-none')) {
-                title.classList.add('d-none');
-                form.classList.remove('d-none');
-                link.textContent = "Cancel";
-            } else {
-                title.classList.remove('d-none');
-                form.classList.add('d-none');
-                link.textContent = "Edit"
-            }
-        }
+        console.log(link)
+        if (!link) return null;
+
+        $form.toggle()
+        $title.toggle()
+        link.textContent = $form.is(':visible') ? "Cancel" : "Edit"
     }
 });
