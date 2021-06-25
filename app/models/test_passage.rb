@@ -31,6 +31,10 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def current_question_index
+    test.questions.index(current_question) unless completed?
+  end
+
   private
 
   def set_question
