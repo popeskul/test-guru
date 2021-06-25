@@ -17,16 +17,18 @@ function checkPass() {
         pass2.style.backgroundColor = color;
     }
 
+    // Check empty
+    if (pass2.value === 0 || pass1.value === 0) {
+        inputsStyles('transparent')
+        mismatchNotification.classList.remove('hide')
+    }
+
+    // Check for correct/wrong
     if (pass1.value === pass2.value) {
         inputsStyles(goodColor)
         mismatchNotification.classList.add('hide')
     } else {
         inputsStyles(badColor);
-        mismatchNotification.classList.remove('hide')
-    }
-
-    if (pass2.value === 0 || pass1.value === 0) {
-        inputsStyles('transparent')
         mismatchNotification.classList.remove('hide')
     }
 }
