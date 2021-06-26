@@ -1,6 +1,6 @@
 users = User.create([
-  { first_name: 'Admin', last_name: 'Durden', email: 'admin@mail.com', password: '123123', type: 'Admin' },
-  { first_name: 'User', last_name: 'Tick', email: 'user@mail.com', password: '123123' }
+  { first_name: 'Admin', last_name: 'Durden', email: 'popeskul.front@gmail.com', password: '123123', type: 'Admin' },
+  { first_name: 'User', last_name: 'Tick', email: 'peterjob91@gmail.com', password: '123123' }
 ])
 
 categories = Category.create([
