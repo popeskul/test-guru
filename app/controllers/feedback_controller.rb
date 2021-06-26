@@ -3,10 +3,10 @@ class FeedbackController < ApplicationController
 
   def send_message
     FeedbackMailer.message_email(current_user, params[:message]).deliver_now
-    flash[:notice] = t('.success')
+    flash.now[:notice] = t('.success')
     redirect_to root_path
   rescue StandardError => e
-    flash[:alert] = e.to_s
+    flash.now[:alert] = e.to_s
   end
 
   def new; end
