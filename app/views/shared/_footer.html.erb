@@ -1,8 +1,12 @@
 <footer class="mt-auto text-lg-start bg-light text-muted">
   <div class="container">
     <div class="pt-4 pb-4">
+      <%= link_to feedback_new_path do %>
+        <%= octicon 'mail' %>
+      <% end %>
+      <br />
       <%= github_url('popeskul', 'test-guru', 'TestGuru') %> &copy; <%= current_year %>
-      <div>Educational project at online-school <a href="//www.thinknetica.com" target="_blank">Thinknetica</a></div>
+      <div class="mb-3">Educational project at online-school <a href="//www.thinknetica.com" target="_blank">Thinknetica</a></div>
     </div>
   </div>
 </footer>
