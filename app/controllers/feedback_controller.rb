@@ -1,17 +1,18 @@
 class FeedbackController < ApplicationController
   before_action :authenticate_user!
 
-  def send_message
-    FeedbackMailer.message_email(current_user, params[:message]).deliver_now
-    flash[:notice] = t('.success')
-    redirect_to root_path
-  end
+  def index; end
 
-  def new; end
+  def create
+    message = params[:message]
 
-  private
-
-  def feedback_params
-    params.require(:message).permit(:message)
+    if message.strip.empty?
+      flash.now[:alert] = t('.failure')
+      render :index
+    else
+      FeedbackMailer.message_email(current_user, message).deliver_now
+      flash[:notice] = t('.success')
+      redirect_to root_path
+    end
   end
 end

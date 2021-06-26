@@ -162,9 +162,10 @@ en:
       subject: "You just completed the TestGuru test!"
 
   feedback:
-    new:
+    index:
       header: 'Send us a message'
       label: 'Text message'
       submit: 'Send'
-    send_message:
+    create:
       success: "Message sent successfully"
+      failure: "Filed must not be empty"

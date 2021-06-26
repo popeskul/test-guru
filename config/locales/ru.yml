@@ -169,9 +169,10 @@ ru:
       subject: "Вы успешно завершили тест на TestGuru!"
 
   feedback:
-    new:
+    index:
       header: 'Отправьте нам сообщение'
       label: 'Тест сообщения'
       submit: 'Отправить'
-    send_message:
+    create:
       success: "Сообщение успешно отправлено"
+      failure: "Поле не должно быть пустым"
