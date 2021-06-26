@@ -167,3 +167,11 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  feedback:
+    new:
+      header: 'Отправьте нам сообщение'
+      label: 'Тест сообщения'
+      submit: 'Отправить'
+    send_message:
+      success: "Сообщение успешно отправлено"

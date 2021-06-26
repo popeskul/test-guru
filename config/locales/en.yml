@@ -160,3 +160,11 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  feedback:
+    new:
+      header: 'Send us a message'
+      label: 'Text message'
+      submit: 'Send'
+    send_message:
+      success: "Message sent successfully"
