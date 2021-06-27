@@ -93,6 +93,7 @@ ru:
       header: "Прохождение теста"
       next: "Дальше"
       gist: "Создать Gist"
+      questions_not_found: "Вопросы не найдены"
     gist:
       success: "Gist успешно сохранен! <b><a href='%{url}' target='_blank'>ПЕРЕЙТИ</a></b>"
       failure: "Во время сохранения gist произошла ошибка"
