@@ -33,8 +33,11 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    @test.destroy
-    redirect_to admin_tests_path
+    if @test.destroy
+      redirect_to admin_tests_path
+    else
+      redirect_to admin_tests_path, alert: t('.error')
+    end
   end
 
   def update_inline

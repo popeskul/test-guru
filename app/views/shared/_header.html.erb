@@ -10,16 +10,12 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item"><b><%= welcome_message(current_user) %></b></li>
+          <li class="nav-item"><%= current_user.email %></li>
         <% end %>
       </ul>
 
       <% if user_signed_in? %>
         <ul class="navbar-nav">
-          <%# if current_user.admin? %>
-<!--            <li class="nav-link">-->
-              <%#= link_to t('.all_gists'), admin_gists_path, class: ['btn nav-link'] %>
-<!--            </li>-->
-          <%# end %>
           <li class="nav-item"><%= link_to t('tests.index.header'), tests_path, class: current_user&.admin? ? 'nav-link text-white' : 'nav-link' %></li>
           <li class="nav-item"><%= link_to t('.exit'), destroy_user_session_path, method: :delete, class: current_user&.admin? ? 'nav-link text-white' : 'nav-link' %></li>
           <li><%= select_language %></li>

@@ -27,4 +27,6 @@ Rails.application.routes.draw do
 
     resources :gists, only: %i[show index]
   end
+
+  resources :feedback, only: %i[index create]
 end

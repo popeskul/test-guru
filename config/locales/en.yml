@@ -90,6 +90,7 @@ en:
       header: "Passing the test"
       next: "Next"
       gist: "Create a Gist"
+      questions_not_found: "Questions not found"
     gist:
       success: "Gist was successfully created! <b><a href='%{url}' target='_blank'>LINK</a></b>"
       failure: "An error occurred while saving gist"
@@ -160,3 +161,12 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  feedback:
+    index:
+      header: 'Send us a message'
+      label: 'Text message'
+      submit: 'Send'
+    create:
+      success: "Message sent successfully"
+      failure: "Filed must not be empty"

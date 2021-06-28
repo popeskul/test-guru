@@ -93,6 +93,7 @@ ru:
       header: "Прохождение теста"
       next: "Дальше"
       gist: "Создать Gist"
+      questions_not_found: "Вопросы не найдены"
     gist:
       success: "Gist успешно сохранен! <b><a href='%{url}' target='_blank'>ПЕРЕЙТИ</a></b>"
       failure: "Во время сохранения gist произошла ошибка"
@@ -167,3 +168,12 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  feedback:
+    index:
+      header: 'Отправьте нам сообщение'
+      label: 'Тест сообщения'
+      submit: 'Отправить'
+    create:
+      success: "Сообщение успешно отправлено"
+      failure: "Поле не должно быть пустым"

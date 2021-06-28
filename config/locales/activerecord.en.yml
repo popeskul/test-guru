@@ -31,3 +31,8 @@ en:
         required: "Required field"
         blank: "Can't be empty"
         greater_than: "The number must be greater than 0"
+      models:
+        admin:
+          attributes:
+            email:
+              taken: "already taken"
