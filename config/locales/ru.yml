@@ -30,6 +30,9 @@ ru:
         login: "Войти"
       test_passages:
         next: "Дальше"
+      badge:
+        create: "Создать Бэйдж"
+        update: "Обновить Бэйдж"
     label:
       test:
         title: "Название"
@@ -53,6 +56,10 @@ ru:
         edit: "Редактировать"
         actions: "Действия"
         delete: "Удалить"
+      badge:
+        title: 'Название'
+        badge_type: "Названия правила"
+        image_url: "Картинка"
     page:
       back: 'Назад'
       main: 'На главную страницу'
@@ -164,6 +171,55 @@ ru:
         not_found: "Gists не найдено"
       show:
         url: "Ссылка"
+    badges:
+      index:
+        header: "Награды"
+        title: "Название"
+        new_badge: "Новая награда"
+        badge_type: "Названия правила"
+        badge_image: "Картинка"
+        actions: "Действие"
+      new:
+        title: "Название"
+        header: "Награды"
+        new_badge: "Новая награда"
+        badge_type: "Названия правила"
+        badge_image: "Картинка"
+        create: "Создать награду"
+      edit:
+        header: "Награды"
+        title: "Название"
+        new_badge: "Новая награда"
+        badge_type: "Названия правила"
+        badge_image: "Картинка"
+      show:
+        header: "Награды"
+        title: "Название"
+        new_badge: "Новая награда"
+        badge_type: "Названия правила"
+        badge_image: "Картинка"
+        show_button: "Подробнее"
+        edit_button: "Редактировать"
+        delete_button: "Удалить"
+        delete_confirmation: "Точно удалить награду?"
+        badges_list: "Список наград"
+        edit: "Редактировать"
+
+  badges:
+    index:
+      header: "Награды"
+      name: "Название"
+      new_badge: "Новая награда"
+      badge_type: "Названия правила"
+      badge_image: "Картинка"
+      achievements: "Ваши достижения"
+      received: 'Получил'
+    new:
+      header: "Награды"
+      title: "Название"
+      new_badge: "Новая награда"
+      badge_type: "Названия правила"
+      badge_image: "Картинка"
 
   tests_mailer:
     completed_test:

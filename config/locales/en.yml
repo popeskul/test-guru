@@ -28,6 +28,9 @@ en:
         update: "Update Account"
         delete: "Cancel my account"
         login: "Enter"
+      badge:
+        create: "Create Badge"
+        update: "Update Badge"
     label:
       test:
         title: "Title"
@@ -51,6 +54,11 @@ en:
         edit: "Edit"
         actions: "Actions"
         delete: "Delete"
+      badge:
+        title: 'Title'
+        badge_type: 'Rule Names'
+        image_url: 'Picture'
+
     page:
       back: 'Back'
       main: 'To Home Page'
@@ -157,6 +165,55 @@ en:
         not_found: "Gists not found"
       show:
         url: "Url"
+    badges:
+      index:
+        header: "Awards"
+        title: "Title"
+        new_badge: "New badge"
+        badge_type: "Rule Names"
+        badge_image: "Picture"
+        actions: "Action"
+      new:
+        title: "Title"
+        header: "Awards"
+        new_badge: "New badge"
+        badge_type: "Rule Names"
+        badge_image: "Picture"
+        create: "Create badge"
+      edit:
+        header: "Awards"
+        title: "Title"
+        new_badge: "New badge"
+        badge_type: "Rule Names"
+        badge_image: "Picture"
+      show:
+        header: "Awards"
+        title: "Title"
+        new_badge: "New badge"
+        badge_type: "Rule Names"
+        badge_image: "Picture"
+        show_button: "View"
+        edit_button: "Edit"
+        delete_button: "Delete"
+        delete_confirmation: "Are you sure to delete?"
+        badges_list: "Badges list"
+        edit: "Edit"
+
+  badges:
+    index:
+      header: "Awards"
+      name: "Title"
+      new_badge: "New badge"
+      badge_type: "Rule Names"
+      badge_image: "Picture"
+      achievements: "Your achievements"
+      received: 'Received'
+    new:
+      header: "Awards"
+      title: "Title"
+      new_badge: "New badge"
+      badge_type: "Rule Names"
+      badge_image: "Picture"
 
   tests_mailer:
     completed_test:

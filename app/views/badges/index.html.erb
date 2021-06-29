@@ -1,0 +1,19 @@
+<h1><%= t('.header') %>:</h1>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<table class="table table-bordered">
+  <thead class="thead">
+  <tr>
+    <th>
+      <%= t('.name') %>
+    </th>
+    <th><%= t('.badge_type') %></th>
+    <th><%= t('.badge_image') %></th>
+    <th><%= t('.achievements') %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @badges %>
+  </tbody>
+</table>

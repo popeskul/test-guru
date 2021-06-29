@@ -40,9 +40,27 @@ questions = Question.create([
 
 answers = Answer.create([
   { correct: true, title: 'text 1', question_id: questions[0].id },
-  { correct: false, title: 'text 2', question_id: questions[1].id },
-  { correct: false, title: 'text 3', question_id: questions[2].id },
+  { correct: true, title: 'text 2', question_id: questions[1].id },
+  { correct: true, title: 'text 3', question_id: questions[2].id },
   { correct: true, title: 'text 4', question_id: questions[0].id },
-  { correct: false, title: 'text 5', question_id: questions[1].id },
-  { correct: false, title: 'text 6', question_id: questions[2].id }
+  { correct: true, title: 'text 5', question_id: questions[1].id },
+  { correct: true, title: 'text 6', question_id: questions[2].id }
 ])
+
+Badge.create([
+   {
+     title: 'all_tests_at_category',
+     badge_type: 'all_tests_at_category',
+     image_url: 'info'
+   },
+   {
+     title: 'passing_test_at_first_attempt',
+     badge_type: 'passing_test_at_first_attempt',
+     image_url: 'check-circle'
+   },
+   {
+     title: 'all_tests_at_level',
+     badge_type: 'all_tests_at_level',
+     image_url: 'check-circle-fill'
+   }
+ ])

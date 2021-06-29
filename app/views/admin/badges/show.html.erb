@@ -1,0 +1,15 @@
+<h2><%= t('.header', id: @badge.id) %>:</h2>
+
+<div class="mb-3">
+  <div class="mb-3">
+    <strong><%= t('.title') %>:</strong> <%= @badge.title %>
+  </div>
+  <div class="mb-3">
+    <strong><%= t('.badge_type') %>:</strong> <%= @badge.badge_type %>
+  </div>
+  <div class="mb-3">
+    <strong><%= t('.badge_image') %>:</strong> <%= @badge.image_url %>
+  </div>
+</div>
+
+<%= link_to t('helpers.page.back'), admin_badges_path, class: 'link-primary' %> | <%= link_to t('admin.badges.show.edit'), edit_admin_badge_path(@badge) %>
