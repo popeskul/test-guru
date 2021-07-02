@@ -6,7 +6,9 @@ class BadgesService
 
   def call
     @badges = Badge.all
-    @badges.each { |badge| self.create_badge(badge) if validator(badge.badge_type) }
+    @badges.each do |badge|
+      self.create_badge(badge) if validator(badge)
+    end
   end
 
   private
@@ -20,8 +22,8 @@ class BadgesService
     errors.add(:badges, :invalid) unless @user_badge.save
   end
 
-  def validator(badge_type)
-    self.send(badge_type) if is_uniq_badge?(badge_type)
+  def validator(badge)
+    self.send(badge.badge_type)
   end
 
   def passing_test_at_first_attempt
@@ -36,8 +38,7 @@ class BadgesService
                       .where(test_id: test_ids, user_id: @current_user.id)
                       .pluck(:test_id)
                       .uniq
-    test_ids == completed_ids
-    puts test_ids == completed_ids
+    test_ids.sort == completed_ids.sort
   end
 
   def all_tests_at_category
@@ -52,17 +53,6 @@ class BadgesService
                       .where(test_id: current_category_tests_ids, user_id: @current_user.id)
                       .pluck(:test_id)
                       .uniq
-    current_category_tests_ids == completed_ids
-  end
-
-  def is_uniq_badge?(type)
-    @badge = Badge.where(badge_type: type)
-    @test = @test_passage.test
-    @user_badges = UserBadge.where(
-      user_id: @current_user.id,
-      badge_id: @badge.first.id,
-      test_id: @test.id
-    )
-    @user_badges.blank?
+    current_category_tests_ids.sort == completed_ids.sort
   end
 end

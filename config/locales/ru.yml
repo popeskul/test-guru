@@ -213,7 +213,7 @@ ru:
       badge_type: "Названия правила"
       badge_image: "Картинка"
       achievements: "Ваши достижения"
-      received: 'Получил'
+      number_awards: 'Кол-во наград'
     new:
       header: "Награды"
       title: "Название"

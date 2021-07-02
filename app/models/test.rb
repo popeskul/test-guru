@@ -4,7 +4,7 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
-  has_many :user_badges
+  has_many :user_badges, dependent: :destroy
   has_many :badge, through: :user_badges
 
   scope :by_level, -> (level) { where(level: level) }
