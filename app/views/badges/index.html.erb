@@ -10,10 +10,9 @@
     </th>
     <th><%= t('.badge_type') %></th>
     <th><%= t('.badge_image') %></th>
-    <th><%= t('.achievements') %></th>
   </tr>
   </thead>
   <tbody>
-  <%= render @badges %>
+  <%= render current_user.badge %>
   </tbody>
 </table>

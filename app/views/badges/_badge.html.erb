@@ -2,9 +2,4 @@
   <td class="align-middle"><%= badge.title %></td>
   <td class="align-middle"><%= badge.badge_type %></td>
   <td class="align-middle"><%= octicon badge.image_url %></td>
-  <td class="align-middle">
-    <%  if find_current_user_badge(badge).first %>
-      <%= t('badges.index.number_awards') %> - <%= find_current_user_badge(badge).count %>
-    <% end %>
-  </td>
 </tr>

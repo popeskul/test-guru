@@ -1,11 +1,5 @@
 class BadgesController < ApplicationController
-  before_action :set_all_badges, only: :index
-
-  def index; end
-
-  private
-
-  def set_all_badges
+  def index
     @badges = Badge.all
   end
 end

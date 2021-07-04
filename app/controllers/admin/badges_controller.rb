@@ -35,10 +35,6 @@ class Admin::BadgesController < ApplicationController
     redirect_to admin_badges_path
   end
 
-  def achievements
-    @achieved_badges = current_user.badge.group(:title, :image_url).count
-  end
-
   private
 
   def set_badge

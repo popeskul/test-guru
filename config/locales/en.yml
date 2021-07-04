@@ -206,7 +206,6 @@ en:
       new_badge: "New badge"
       badge_type: "Rule Names"
       badge_image: "Picture"
-      achievements: "Your achievements"
       number_awards: 'Number of awards'
     new:
       header: "Awards"
