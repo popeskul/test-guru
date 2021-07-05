@@ -72,7 +72,7 @@ Badge.create([
    {
      title: 'all_tests_at_category ruby',
      badge_type: 'all_tests_at_category',
-     parameter: 'ruby',
+     parameter: categories[0].title,
      image_url: 'diamond'
    },
    {
