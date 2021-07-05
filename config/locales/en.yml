@@ -173,6 +173,7 @@ en:
         badge_type: "Rule Names"
         badge_image: "Picture"
         actions: "Action"
+        parameter: 'Parameter'
       new:
         title: "Title"
         header: "Awards"
@@ -180,12 +181,14 @@ en:
         badge_type: "Rule Names"
         badge_image: "Picture"
         create: "Create badge"
+        parameter: 'Parameter'
       edit:
         header: "Awards"
         title: "Title"
         new_badge: "New badge"
         badge_type: "Rule Names"
         badge_image: "Picture"
+        parameter: 'Parameter'
       show:
         header: "Awards"
         title: "Title"
@@ -198,6 +201,7 @@ en:
         delete_confirmation: "Are you sure to delete?"
         badges_list: "Badges list"
         edit: "Edit"
+        parameter: 'Parameter'
 
   badges:
     index:
@@ -207,12 +211,14 @@ en:
       badge_type: "Rule Names"
       badge_image: "Picture"
       number_awards: 'Number of awards'
+      parameter: 'Parameter'
     new:
       header: "Awards"
       title: "Title"
       new_badge: "New badge"
       badge_type: "Rule Names"
       badge_image: "Picture"
+      parameter: 'Parameter'
 
   tests_mailer:
     completed_test:

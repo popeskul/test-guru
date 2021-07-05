@@ -179,6 +179,7 @@ ru:
         badge_type: "Названия правила"
         badge_image: "Картинка"
         actions: "Действие"
+        parameter: 'Параметр'
       new:
         title: "Название"
         header: "Награды"
@@ -186,12 +187,14 @@ ru:
         badge_type: "Названия правила"
         badge_image: "Картинка"
         create: "Создать награду"
+        parameter: 'Параметр'
       edit:
         header: "Награды"
         title: "Название"
         new_badge: "Новая награда"
         badge_type: "Названия правила"
         badge_image: "Картинка"
+        parameter: 'Параметр'
       show:
         header: "Награды"
         title: "Название"
@@ -204,6 +207,7 @@ ru:
         delete_confirmation: "Точно удалить награду?"
         badges_list: "Список наград"
         edit: "Редактировать"
+        parameter: 'Параметр'
 
   badges:
     index:
@@ -213,12 +217,14 @@ ru:
       badge_type: "Названия правила"
       badge_image: "Картинка"
       number_awards: 'Кол-во наград'
+      parameter: 'Параметр'
     new:
       header: "Награды"
       title: "Название"
       new_badge: "Новая награда"
       badge_type: "Названия правила"
       badge_image: "Картинка"
+      parameter: 'Параметр'
 
   tests_mailer:
     completed_test:

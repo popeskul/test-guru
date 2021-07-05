@@ -7,6 +7,7 @@ class Badge < ApplicationRecord
 
   validates :title, presence: true
   validates :badge_type, presence: true
+  validates :parameter, presence: true
   validates :image_url, presence: true
 
   attr_accessor :types

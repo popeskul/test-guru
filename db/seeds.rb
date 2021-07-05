@@ -17,32 +17,32 @@ tests = Test.create([
     user_id: users[0].id
   },
   {
-    title: 'Test SQL, level 1',
-    level: 1,
+    title: 'Test SQL, level 2',
+    level: 2,
     category_id: categories[1].id,
     user_id: users[1].id
   },
   {
-    title: 'Test JS, level 1 --- 1',
-    level: 1,
+    title: 'Test JS, level 3',
+    level: 3,
     category_id: categories[2].id,
     user_id: users[0].id
   },
   {
-    title: 'Test JS, level 1 --- 2',
-    level: 1,
+    title: 'Test JS, level 3 --- 2',
+    level: 3,
     category_id: categories[2].id,
     user_id: users[0].id
   },
   {
-    title: 'Test JS, level 2 --- 1',
-    level: 2,
+    title: 'Test JS, level 4 --- 1',
+    level: 4,
     category_id: categories[2].id,
     user_id: users[0].id
   },
   {
-    title: 'Test JS, level 2 --- 2',
-    level: 2,
+    title: 'Test JS, level 4 --- 2',
+    level: 4,
     category_id: categories[2].id,
     user_id: users[0].id
   }
@@ -70,18 +70,21 @@ answers = Answer.create([
 
 Badge.create([
    {
-     title: 'all_tests_at_category',
+     title: 'all_tests_at_category ruby',
      badge_type: 'all_tests_at_category',
-     image_url: 'info'
+     parameter: 'ruby',
+     image_url: 'diamond'
    },
    {
      title: 'passing_test_at_first_attempt',
      badge_type: 'passing_test_at_first_attempt',
+     parameter: 'passing_test_at_first_attempt',
      image_url: 'check-circle'
    },
    {
-     title: 'all_tests_at_level',
+     title: 'all_tests_at_level 1',
      badge_type: 'all_tests_at_level',
+     parameter: 1,
      image_url: 'check-circle-fill'
    }
  ])

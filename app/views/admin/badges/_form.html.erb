@@ -13,7 +13,12 @@
     </div>
 
     <div class="mb-3">
-      <%= form.label :image_url, class: 'form-label' %><br>
+      <%= form.label :parameter, class: 'form-label' %>
+      <%= form.text_field :parameter, id: :parameter, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :image_url, class: 'form-label' %>
       <%= form.select :image_url, Octicons::OCTICON_SYMBOLS.keys, { prompt: true }, { class: 'form-select' } %>
     </div>
 

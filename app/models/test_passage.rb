@@ -6,6 +6,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_question
+  before_update :set_passed
 
   def completed?
     current_question.nil?
@@ -55,5 +56,9 @@ class TestPassage < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def set_passed
+    self.passed = passed? if completed?
   end
 end

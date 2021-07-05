@@ -1,58 +1,52 @@
 class BadgesService
   def initialize(test_passage)
     @test_passage = test_passage
-    @current_user = test_passage.user
-  end
+    @user = test_passage.user
+    @badges = Badge
 
-  def call
-    @badges = Badge.all
-    @badges.each do |badge|
-      self.create_badge(badge) if validator(badge)
-    end
+    initialize_badge
   end
 
   private
 
+  def initialize_badge
+    @badges.all.each do |badge|
+      create_badge(badge) if self.send(badge.badge_type, badge.parameter)
+    end
+  end
+
   def create_badge(badge)
     @user_badge = UserBadge.new(
       test_id: @test_passage.test.id,
-      user_id: @current_user.id,
+      user_id: @user.id,
       badge_id: badge.id
     )
     errors.add(:badges, :invalid) unless @user_badge.save
   end
 
-  def validator(badge)
-    self.send(badge.badge_type)
+  def all_tests_at_category(*args)
+    category = Category.find_by(title: args[0])
+
+    return false if @test_passage.test.category.id != category.id
+    @test_passage.passed? && @user.tests.where(category_id: category.id).uniq.count == Test.where(category_id: category.id).count
   end
 
-  def passing_test_at_first_attempt
-    @current_user.tests.where(id: @test_passage.test.id).count == 1
+  def passing_test_at_first_attempt(*args)
+    @test_passage.passed?
   end
 
-  def all_tests_at_level
-    current_level = @test_passage.test.level
-    test_ids = Test.where(level: current_level).ids
-    completed_ids = TestPassage
-                      .all
-                      .where(test_id: test_ids, user_id: @current_user.id)
-                      .pluck(:test_id)
-                      .uniq
-    test_ids.sort == completed_ids.sort
-  end
+  def all_tests_at_level(*args)
+    level = args[0].to_i
 
-  def all_tests_at_category
-    category = @test_passage.test.category
-    current_category_tests_ids = Test
-                                   .joins(:category)
-                                   .where(categories: { title: category.title })
-                                   .order(id: :asc)
-                                   .ids
-    completed_ids = TestPassage
-                      .all
-                      .where(test_id: current_category_tests_ids, user_id: @current_user.id)
-                      .pluck(:test_id)
-                      .uniq
-    current_category_tests_ids.sort == completed_ids.sort
+    return false if level != @test_passage.test.level
+
+    tests = Test.where(level: level).pluck(:id)
+    completed = @test_passage
+                  .user
+                  .test_passages
+                  .where(passed: true, test: tests)
+                  .pluck(:test_id)
+                  .uniq
+    tests.count == completed.count
   end
 end
