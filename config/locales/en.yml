@@ -39,6 +39,7 @@ en:
         action: "Action"
         category_id: "Category"
         text: "Text"
+        passage_time: 'Passage time'
       question:
         body: "Body"
         correct: "Correct"
@@ -58,7 +59,6 @@ en:
         title: 'Title'
         badge_type: 'Rule Names'
         image_url: 'Picture'
-
     page:
       back: 'Back'
       main: 'To Home Page'
@@ -125,6 +125,7 @@ en:
         delete: "Delete"
       index:
         header: "Tricky Tests"
+        passage_time: "Passage time(secs)"
       new:
         header: "New test"
       show:

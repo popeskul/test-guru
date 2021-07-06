@@ -16,11 +16,16 @@ class Test < ApplicationRecord
 
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than: 0 }, uniqueness: { scope: :title }
+  validates :passage_time, numericality: { only_integer: true, greater_than: 0 }
 
   def self.by_title(title)
     Test
       .by_category_title(title)
       .order(title: :desc)
       .pluck(:title)
+  end
+
+  def has_timer?
+    self.passage_time > 0
   end
 end

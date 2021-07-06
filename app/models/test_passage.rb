@@ -36,6 +36,10 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question) unless completed?
   end
 
+  def remaining_time
+    (self.test.passage_time - (Time.current - self.created_at).seconds).to_i
+  end
+
   private
 
   def set_question
