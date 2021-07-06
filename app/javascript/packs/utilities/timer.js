@@ -14,8 +14,7 @@ function startTimer(control, timeRemaining) {
         timeRemaining--;
         setTimeout(startTimer, 1000, control, timeRemaining);
     } else {
-        const resultPage = window.location.href + '/result';
-        window.location.replace(resultPage);
+        document.getElementById('test_passages').submit();
     }
 }
 
