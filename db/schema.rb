@@ -82,15 +82,15 @@ ActiveRecord::Schema.define(version: 2021_07_05_181651) do
     t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
-  create_table "user_badges", force: :cascade do |t|
+  create_table "user_test_badges", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "badge_id", null: false
     t.bigint "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["badge_id"], name: "index_user_badges_on_badge_id"
-    t.index ["test_id"], name: "index_user_badges_on_test_id"
-    t.index ["user_id"], name: "index_user_badges_on_user_id"
+    t.index ["badge_id"], name: "index_user_test_badges_on_badge_id"
+    t.index ["test_id"], name: "index_user_test_badges_on_test_id"
+    t.index ["user_id"], name: "index_user_test_badges_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 2021_07_05_181651) do
   add_foreign_key "test_passages", "users"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users"
-  add_foreign_key "user_badges", "badges"
-  add_foreign_key "user_badges", "tests"
-  add_foreign_key "user_badges", "users"
+  add_foreign_key "user_test_badges", "badges"
+  add_foreign_key "user_test_badges", "tests"
+  add_foreign_key "user_test_badges", "users"
 end

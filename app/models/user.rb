@@ -11,8 +11,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test'
   has_many :gists
-  has_many :user_badges, dependent: :destroy
-  has_many :badge, through: :user_badges
+  has_many :user_test_badges, dependent: :destroy
+  has_many :badge, through: :user_test_badges
 
   validates :last_name, presence: true
   validates :first_name, presence: true

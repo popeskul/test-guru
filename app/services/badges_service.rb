@@ -15,12 +15,12 @@ class BadgesService
   end
 
   def create_badge(badge)
-    @user_badge = UserBadge.new(
+    @user_test_badge = UserTestBadge.new(
       test_id: @test_passage.test.id,
       user_id: @user.id,
       badge_id: badge.id
     )
-    errors.add(:badges, :invalid) unless @user_badge.save
+    errors.add(:badges, :invalid) unless @user_test_badge.save
   end
 
   def all_tests_at_category(category_title)
@@ -34,7 +34,7 @@ class BadgesService
   end
 
   def all_tests_at_level(level)
-    return false if level != @test_passage.test.level
+    return false if level.to_i != @test_passage.test.level
 
     tests = Test.where(level: level).pluck(:id)
     completed = @test_passage

@@ -1,9 +1,9 @@
 class Badge < ApplicationRecord
   RULE_TYPES = %i[all_tests_at_category passing_test_at_first_attempt all_tests_at_level]
 
-  has_many :user, through: :user_badges
-  has_many :test, through: :user_badges
-  has_many :user_badges
+  has_many :user, through: :user_test_badges
+  has_many :test, through: :user_test_badges
+  has_many :user_test_badges
 
   validates :title, presence: true
   validates :badge_type, presence: true
