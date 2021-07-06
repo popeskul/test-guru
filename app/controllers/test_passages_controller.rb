@@ -7,14 +7,17 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
-
-    if @test_passage.completed?
-      send_mail(@test_passage)
-      BadgesService.new(@test_passage) if @test_passage.passed?
+    if @test_passage.remaining_time <= 0
       redirect_to result_test_passage_path(@test_passage)
     else
-      render :show
+      @test_passage.accept!(params[:answer_ids])
+      if @test_passage.completed?
+        send_mail(@test_passage)
+        BadgesService.new(@test_passage) if @test_passage.passed?
+        redirect_to result_test_passage_path(@test_passage)
+      else
+        render :show
+      end
     end
   end
 
