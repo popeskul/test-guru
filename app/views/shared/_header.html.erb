@@ -11,6 +11,7 @@
         <% if user_signed_in? %>
           <li class="nav-item"><b><%= welcome_message(current_user) %></b></li>
           <li class="nav-item"><%= current_user.email %></li>
+          <li><%= link_to 'Badges', badges_path, class: 'badge bg-dark text-light' %></li>
         <% end %>
       </ul>
 
