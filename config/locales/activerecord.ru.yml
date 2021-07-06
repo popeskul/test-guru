@@ -11,6 +11,7 @@ ru:
         level: "Уровень"
         author: "Автор"
         category: "Категория"
+        passage_time: "Время прохождения"
 
       question:
         test: "Тест"

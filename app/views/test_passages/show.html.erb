@@ -1,5 +1,13 @@
 <h3><%= t('.header') %> <%= @test_passage.test.title %></h3>
 
+<% if @test_passage.test.has_timer? %>
+  <%= content_tag :div,
+                  class: 'timer',
+                  data: { remaining_time: @test_passage.remaining_time } do %>
+    <%= content_tag :span, nil, class: 'timer_label' %>
+  <% end %>
+<% end %>
+
 <% if @test_passage.test.questions.present? %>
   <div class="progress test-progress">
     <%= content_tag :div, '',
@@ -38,3 +46,5 @@
     <h1><%= t('.questions_not_found') %></h1>
   </div>
 <% end %>
+
+<%= javascript_pack_tag 'utilities/timer.js' %>

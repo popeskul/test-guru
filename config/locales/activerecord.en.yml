@@ -4,8 +4,6 @@ en:
     
     models:
       test: "Test"
-      answer:
-        limit: "Exceeded answers limit"
 
     attributes:
       test:
@@ -13,6 +11,7 @@ en:
         level: "Level"
         author: "Author"
         category: "Category"
+        passage_time: "Passage time"
 
       question:
         test: "Test"

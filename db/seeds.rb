@@ -14,37 +14,43 @@ tests = Test.create([
     title: 'Test Ruby, level 1',
     level: 1,
     category_id: categories[0].id,
-    user_id: users[0].id
+    user_id: users[0].id,
+    passage_time: 20
   },
   {
     title: 'Test SQL, level 2',
     level: 2,
     category_id: categories[1].id,
-    user_id: users[1].id
+    user_id: users[1].id,
+    passage_time: 20
   },
   {
     title: 'Test JS, level 3',
     level: 3,
     category_id: categories[2].id,
-    user_id: users[0].id
+    user_id: users[0].id,
+    passage_time: 20
   },
   {
     title: 'Test JS, level 3 --- 2',
     level: 3,
     category_id: categories[2].id,
-    user_id: users[0].id
+    user_id: users[0].id,
+    passage_time: 20
   },
   {
     title: 'Test JS, level 4 --- 1',
     level: 4,
     category_id: categories[2].id,
-    user_id: users[0].id
+    user_id: users[0].id,
+    passage_time: 20
   },
   {
     title: 'Test JS, level 4 --- 2',
     level: 4,
     category_id: categories[2].id,
-    user_id: users[0].id
+    user_id: users[0].id,
+    passage_time: 20
   }
 ])
 

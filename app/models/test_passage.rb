@@ -7,6 +7,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :set_question
   before_update :set_passed
+  before_create :set_starting_time
 
   def completed?
     current_question.nil?
@@ -36,6 +37,10 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question) unless completed?
   end
 
+  def remaining_time
+    (self.test.passage_time - (Time.current - self.created_at).seconds).to_i
+  end
+
   private
 
   def set_question
@@ -60,5 +65,9 @@ class TestPassage < ApplicationRecord
 
   def set_passed
     self.passed = passed? if completed?
+  end
+
+  def set_starting_time
+    self.start_time = Time.current
   end
 end

@@ -41,6 +41,7 @@ ru:
         action: "Действия"
         category_id: "Категория"
         text: "Текст"
+        passage_time: 'Время прохождения'
       question:
         body: "Поле"
         actions: "Действия"
@@ -128,6 +129,7 @@ ru:
         delete: "Удалить"
       index:
         header: "Доступные Тесты"
+        passage_time: "Время прохождения(сек)"
       new:
         header: "Новый тест"
       show:
